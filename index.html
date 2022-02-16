@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <header class="header">
+        <h2>Formulär för betalning</h2>
+    </header>
+    <main>
+        <div style="display: flex;flex-direction: row;justify-content: left;" >
+            <!-- LÄGG IN ADRESS TILL API I ACTION-TAGGEN -->
+            <form action="" method="post">
+                <fieldset>
+                    <div>
+                        <legend>Registrera medlemsuppgfiter</legend>
+                        <div>
+                            <label for="fname">Förnamn:</label>
+                            <input type="text" id="fname" name="fname" required>
+                        </div>
+                        <label for="ename">Efternamn:</label>
+                        <input type="text" id="ename" name="ename" required>
+                        
+                        <label for="adress">Adress:</label>
+                        <input type="text" id="adress" name="adress"required>
+                        <div>
+                            <label for="postnum">Postnummer och ort:</label>
+                            <div style=>
+                                <input type="text" id="postnum" name="postnum" required>
+                                <input type="text" id="town" name="town" required>
+                            </div>
+                        </div>
+                        <label for="mobile">Mobil:</label>
+                        <input type="text" id="mobile" name="mobile" required>
+                        <label for="email">E-post:</label>
+                        <input type="text" id="email" name="email" required>
+                        <label for="pwd">Lösenord:</label><br>
+                        <input type="password" id="pwd" name="pwd" placeholder="********" required>
+                        <p>
+                            <i>Obligatoriska uppgifter *</i>
+                        </p>
+                        <div>
+                            <label for="subscribe">Erbjudanden via e-post</label>
+                            <input type="checkbox" name="subscribe" id="subscribe">
+                        </div>
+                        <div>
+                            <label for="email-type">Erbjudanden via e-post</label>
+                            <input type="radio" name="email-type" value="HTML">
+                            <input type="radio" name="email-type" value="text">
+                        </div>
+                        <div>
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Clear">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
