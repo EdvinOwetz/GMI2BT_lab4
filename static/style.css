@@ -40,3 +40,28 @@ header, footer {
     content: " *";
     color: red;
 }
+
+/*Table*/
+.general_table {
+    border: 0.14rem solid black;
+    background-color: rgba(255, 255, 255, 0);
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: auto;
+}
+
+.general_table thead {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.general_table td{
+    border: 0.14rem solid black;
+    padding: 0.3rem;
+}
+
+.general_table th{
+    border: 0.14rem solid black;
+    padding: 0.3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

@@ -13,20 +13,15 @@ def display_form():
     return render_template("index.html")
 
 @app.route("/submit",methods=["POST","GET"])
-def form_recive():
-    # lista=[]
-    # lista.append(request.form["fname"])
-    # lista.append(request.form["ename"])
-    # lista.append(request.form["kort"])
-    # text=""
-    # for item in lista:
-    #     text+=item+"\n"
-    # return text
-
-    return str(request.get_json())
-
-    #return render_template("return_form.html",data=data)
-    #return render_template('shortenurl.html', shortcode=request.form['shortcode'])
+def show_form_data():
+    if request.method == "POST":
+        #data är nu en dictionary (ImmutableDictionary) oförändelig dictionary
+        formdata=request.form
+        #print(formdata)
+        #return data
+        return render_template("return_form.html",data=formdata)
+    else:
+        return "Wrong method, no GET only POST!"
 
 
 # @app.route('/shortenurl', methods=['GET', 'POST'])

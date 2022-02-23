@@ -5,13 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulär Visning</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <ul>
-        {% for item in data :
-            key=item.key()
-            info=item
-            %}
-    </ul>
+    <header>
+        <h2>Data från formuläret</h2>
+    </header>
+    <main>
+        <table class="general_table">
+            <thead>
+                <tr>
+                    <th>Nyckelvärden</th>
+                    <th>Värden</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key,value in data.items() %}
+                    <tr>
+                        <td>{{key}}</td>
+                        <td>{{value}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <!-- <tfoot></tfoot> -->
+        </table>
+    </main>
+    <footer></footer>
 </body>
 </html>
+
+<!-- https://stackoverflow.com/questions/27658482/how-to-parse-and-render-json-use-in-flask-template -->
