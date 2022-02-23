@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <header class="header">
         <h2>Formulär för betalning</h2>
     </header>
-    <main>
+    <main class="main_class">
         <!-- LÄGG IN ADRESS TILL API I ACTION-TAGGEN -->
-        <form action="" method="post" class="flex_class">
-            <fieldset>
+        <form action="submit" method="post" class="flex_class">
+            <fieldset class="fieldset_width">
                 <div class="form_class">
                     <legend>Registrera medlemsuppgfiter</legend>
                     <div>
@@ -69,8 +69,8 @@
                         <input type="radio" name="email-type" value="text">
                     </div>
                     <div>
-                        <label for="comments">Dina kommentarer:</label><br>
-                        <textarea cols="40" rows="3" name="comments"></textarea> 
+                        <label for="comments">Övriga kommentarer:</label><br>
+                        <textarea cols="40" rows="3" name="comments" placeholder="Din text här..."></textarea> 
                     </div>
                     <div>
                         <input type="submit" value="Submit">
