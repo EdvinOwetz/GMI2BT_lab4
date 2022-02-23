@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 # from flask import request
 
 
@@ -10,8 +10,8 @@ app=Flask(__name__)
 #@app.route("/",methods=["POST"])
 @app.route("/")
 def display_form():
-    return "Hello"
-#    return render_template("./web_form/index.html")
+#    return "Hello"
+    return render_template("index.html")
 
 if(__name__=="__main__"):
     print("Starting Flask")

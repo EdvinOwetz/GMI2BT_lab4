@@ -20,11 +20,11 @@
 }
 
 .form_class, .form_class > * {
-    margin:0.5rem;
+    padding:0.5rem;
 }
 
 header, footer{
-    margin: 0.3rem;
+    padding: 0.5rem;
 }
 
 .required:after {
