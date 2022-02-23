@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from flask import request
+from flask import Flask
+# from flask import request
 
 
 __author__="Edvin Owetz, Nils Broberg"

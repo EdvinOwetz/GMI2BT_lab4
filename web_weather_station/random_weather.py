@@ -1,4 +1,4 @@
-from flask import request
+from flaskan import request
 from random import uniform
 
 def generate_weather_data():
