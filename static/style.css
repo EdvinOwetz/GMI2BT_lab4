@@ -65,3 +65,16 @@ header, footer {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+
+
+
+/*classer för färgning av jämna td och tr taggar*/
+
+.general_table--color_even_hor tbody td:nth-child(even){
+    background-color: rgba(162, 0, 255, 0.14);
+}
+
+.general_table--color_even_ver tr:nth-child(even){
+    background-color: rgba(0, 117, 252, 0.14);
+}
