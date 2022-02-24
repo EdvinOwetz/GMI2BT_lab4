@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulär Visning</title>
+    <title>Väderdata</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <main>
         <table class="general_table general_table--color_even_ver general_table--color_even_hor">
-            <caption><h2>Data från formuläret</h2></caption>
+            <caption><h2>Väderdata</h2></caption>
             <thead>
                 <tr>
-                    <th>Time</th>
-                    <th>Temp</th>
-                    <th>Pressure</th>
-                    <th>Humidity</th>
+                    {% for item in data.datakeys %}
+                        <th>{{item}}</th>
+                    {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for item in data %}
+                {% for item in data.data %}
                     <tr>
-                        <td>{{item.Time}}</td>
-                        <td>{{item.Temp}}</td>
-                        <td>{{item.Pressure}}</td>
-                        <td>{{item.Humidity}}</td>
+                        {% for key in data.datakeys %}
+                        <td>{{item[key]}}</td>
+                        {% endfor %}
                     </tr>
                 {% endfor %}
             </tbody>
