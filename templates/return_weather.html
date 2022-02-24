@@ -9,19 +9,23 @@
 </head>
 <body>
     <main>
-        <table class="general_table general_table--color_even_ver">
+        <table class="general_table general_table--color_even_ver general_table--color_even_hor">
             <caption><h2>Data från formuläret</h2></caption>
             <thead>
                 <tr>
-                    <th>Nyckelvärden</th>
-                    <th>Värden</th>
+                    <th>Time</th>
+                    <th>Temp</th>
+                    <th>Pressure</th>
+                    <th>Humidity</th>
                 </tr>
             </thead>
             <tbody>
-                {% for key,value in data.items() %}
+                {% for item in data %}
                     <tr>
-                        <td>{{key}}</td>
-                        <td>{{value}}</td>
+                        <td>{{item.Time}}</td>
+                        <td>{{item.Temp}}</td>
+                        <td>{{item.Pressure}}</td>
+                        <td>{{item.Humidity}}</td>
                     </tr>
                 {% endfor %}
             </tbody>
