@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import random_weather
 import requests
+from databas import WeatherDatabase
 
 import json
 
@@ -11,10 +12,13 @@ app = Flask(__name__)
 # POST
 # @app.route("/",methods=["POST"])
 
+@app.route("/")
+def homepage():
+    return render_template("index.html")
 
 @app.route("/form")
 def display_form():
-    return render_template("index.html")
+    return render_template("form.html")
 
 
 @app.route("/submit", methods=["POST", "GET"])
@@ -32,7 +36,13 @@ def show_form_data():
 @app.route("/getweather", methods=["POST"])
 def get_weather_json():
     if request.method == "POST":
-        data:list[dict] = random_weather.generate_weather_data()
+        
+        wdb=WeatherDatabase()
+        wdb.create_table()
+        wdb.fill_table()
+        data:list[dict] = wdb.get_table()
+        wdb.connection.close()
+        #data:list[dict] = random_weather.generate_weather_data()
         ret_data:dict={"datakeys":list(data[0].keys()),"data":data}
         return ret_data
     else:

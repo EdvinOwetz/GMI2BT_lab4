@@ -9,76 +9,21 @@
 </head>
 <body>
     <header class="header">
-        <h2>Formulär för betalning</h2>
+        <h2>Laboration 4</h2>
     </header>
-    <main class="main_class">
-        <!-- LÄGG IN ADRESS TILL API I ACTION-TAGGEN -->
-        <form action="submit" method="post" class="flex_class">
-            <fieldset class="fieldset_width">
-                <div class="form_class">
-                    <legend>Registrera medlemsuppgfiter</legend>
-                    <div>
-                        <label for="kort">Välj betalsätt:</label>
-                        <select name="kort">
-                            <option value="visa">VISA</option>
-                            <option value="mastercard">MasterCard</option>
-                            <option value="amex">American Express</option>
-                        </select>
-                    </div>
-                    <div class="required">
-                        <label for="fname">Förnamn:</label>
-                        <input type="text" id="fname" name="fname" required>
-                    </div>
-                    <div class="required">
-                        <label for="ename">Efternamn:</label>
-                        <input type="text" id="ename" name="ename" required>
-                    </div>
-                    <div class="required">
-                        <label for="adress">Adress:</label>
-                        <input type="text" id="adress" name="adress" required>
-                    </div>
-                    <div>
-                        <label for="postnum">Postnummer och ort:</label>
-                        <div class="required">
-                            <input type="text" id="postnum" name="postnum" required>
-                            <input type="text" id="town" name="town" required>
-                        </div>
-                    </div>
-                    <div class="required">
-                        <label for="mobile">Mobil:</label>
-                        <input type="text" id="mobile" name="mobile" required>
-                    </div>
-                    <div class="required">
-                        <label for="email">E-post:</label>
-                        <input type="text" id="email" name="email" required>
-                    </div>
-                    <div class="required">
-                        <label for="pwd">Lösenord:</label>
-                        <input type="password" id="pwd" name="pwd" placeholder="********" required>
-                    </div>
-                    <p class="required">
-                        <em>Obligatoriska uppgifter</em>
-                    </p>
-                    <div>
-                        <label for="subscribe">Erbjudanden via e-post</label>
-                        <input type="checkbox" name="subscribe" id="subscribe">
-                    </div>
-                    <div>
-                        <label for="email-type">Erbjudanden via e-post</label>
-                        <input type="radio" name="email-type" value="HTML">
-                        <input type="radio" name="email-type" value="text">
-                    </div>
-                    <div>
-                        <label for="comments">Övriga kommentarer:</label><br>
-                        <textarea cols="40" rows="3" name="comments" placeholder="Din text här..."></textarea> 
-                    </div>
-                    <div>
-                        <input type="submit" value="Submit">
-                        <input type="reset" value="Clear">
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+    <main >
+        <div class="main_class flex_class">
+            <div>
+                <p>
+                    Här är en länk till <a href="/form">formuläret</a>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Här är en länk till <a href="/weather">vädertabellen</a>
+                </p> 
+            </div>
+        </div>
     </main>
     <footer>
         <p><em>Copyright (not really) by: Nils Broberg (h19nilbr) & Edvin Owetz (h20edvow)</em></p>

@@ -36,6 +36,10 @@ header, footer {
     justify-content: center;
 }
 
+.flex_inline_column{
+    flex-direction: column;
+}
+
 .required:after {
     content: " *";
     color: red;
@@ -65,9 +69,6 @@ header, footer {
     font-weight: bold;
     font-size: 1.2rem;
 }
-
-
-
 
 /*classer för färgning av jämna td och tr taggar*/
 
