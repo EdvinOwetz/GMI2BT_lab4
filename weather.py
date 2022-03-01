@@ -2,7 +2,6 @@
 from random import uniform
 from datetime import datetime, timedelta
 
-
 class Weather:
     def __init__(self, device: str = "", location: str = "",
                  time: str = "", temp: float = 0,
@@ -64,26 +63,6 @@ class Weather:
     def __str__(self) -> str:
         return "Weather: "+str(self.__dict__)
 
-
 if __name__ == "__main__":
-
     # testing things goes here
-
-    # a=Weather.randomize()
-    # b=Weather.randomize()
-
-    # w=Weather()
-    # wdict=w.__dict__
-    # print(wdict)
-    # print(a.__dict__)
-    # print(b.__dict__)
-
-    # c=Weather.randomize()
-    # c_dict=c.__dict__.copy()
-    # c_dict["id"]=100
-    # print(c_dict)
-    # print(Weather.from_dictionary(c_dict))
-    # print(c)
-
-    # print(Weather.generate_randomlist())
     pass
