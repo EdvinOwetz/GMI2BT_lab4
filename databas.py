@@ -1,4 +1,3 @@
-
 import sqlite3
 from pathlib import Path
 from weather import Weather
@@ -8,7 +7,6 @@ from random_weather import generate_weather_data
 # Reference
 # https://www.sqlitetutorial.net/sqlite-python/create-tables/
 
-
 class Database:
     def __init__(self, dbfile: str = "database.db", table_name: str = "default_table") -> None:
         self.dbfile = dbfile
@@ -17,13 +15,12 @@ class Database:
     def connect(self) -> sqlite3.Connection:
         try:
             con = sqlite3.connect(self.dbfile)
-            # print("Databas \""+self.dbfilepath+"\"" ansluten\nSQLite3 version:"+sqlite3.version)
             return con
         except sqlite3.Error as e:
             print("Error: Kunde inte anslutning till databasen.")
             print(e)
 
-    # private methods
+    # Private methods
 
     def _create_table(self, sql: str = None) -> None:
         if sql == None:
@@ -38,7 +35,7 @@ class Database:
     def _dbfile_exists(self) -> bool:
         return Path(self.dbfile).is_file()
 
-    def _tabel_exists(self) -> bool:
+    def _table_exists(self) -> bool:
         sql = f""" SELECT name FROM sqlite_master WHERE type='table' AND name='{self.table_name}'; """
         res: list = self._db_fetchall(sql)
         if len(res) == 0:
@@ -73,7 +70,6 @@ class Database:
                 cur.execute(sql, item)
             con.commit()
 
-
 class WeatherDatabase(Database):
     def __init__(self, dbfile: str = "weather.db", table_name: str = "SensorData") -> None:
         super().__init__(dbfile, table_name)
@@ -89,8 +85,10 @@ class WeatherDatabase(Database):
                             humidity FLOAT NOT NULL,
                             pressure FLOAT NOT NULL
                         ); """
+        # Kontrollerar om databas-filen finns, om inte så skapas den 
+        # Därefter populeras den med tables och dessa fylls med data
         if self._dbfile_exists():
-            if not self._tabel_exists():
+            if not self._table_exists():
                 self._create_table(sql)
                 self.fill_table()
         else:
@@ -116,9 +114,7 @@ class WeatherDatabase(Database):
             wlist.append(Weather.from_dictionary(adict))
         return wlist
 
-
 if __name__ == "__main__":
-
-    # testing things goes here
+    # Testing things goes here - Run this file as main to use this test function
     d = WeatherDatabase()
     print([item.__dict__ for item in d.get_tabledata()])

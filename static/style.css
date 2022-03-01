@@ -1,7 +1,7 @@
 
 @charset "UTF-8";
 
-/* Box sizing rules */
+/*Box sizing rules*/
 
 *,
 *::before,
@@ -45,7 +45,14 @@ header, footer {
     color: red;
 }
 
+.border_box {
+    align-items: center;
+    border: 0.14rem solid black;
+    width: 15rem;
+}
+
 /*Table*/
+
 .general_table {
     border: 0.14rem solid black;
     background-color: rgba(255, 255, 255, 0);
@@ -70,7 +77,7 @@ header, footer {
     font-size: 1.2rem;
 }
 
-/*classer för färgning av jämna td och tr taggar*/
+/*Klasser för färgning av jämna td och tr taggar*/
 
 .general_table--color_even_hor tbody td:nth-child(even){
     background-color: rgba(162, 0, 255, 0.14);
