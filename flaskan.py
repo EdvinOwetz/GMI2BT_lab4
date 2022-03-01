@@ -26,8 +26,7 @@ def show_form_data():
     if request.method == "POST":
         # data är nu en dictionary (ImmutableDictionary) oförändelig dictionary
         formdata = request.form
-        print(formdata)
-        # return data
+        #print(formdata)
         return render_template("return_form.html", data=formdata)
     else:
         return "Wrong method, no GET only POST!"
@@ -38,11 +37,7 @@ def get_weather_json():
     if request.method == "POST":
         
         wdb=WeatherDatabase()
-        wdb.create_table()
-        wdb.fill_table()
-        data:list[dict] = wdb.get_table()
-        wdb.connection.close()
-        #data:list[dict] = random_weather.generate_weather_data()
+        data:list[dict] = [item.__dict__ for item in wdb.get_tabledata()]
         ret_data:dict={"datakeys":list(data[0].keys()),"data":data}
         return ret_data
     else:
@@ -55,11 +50,7 @@ def get_weather_json():
 def show_weather():
     result = requests.post("http://127.0.0.1:5000/getweather")
     
-    #print("This is the Data Gathered in Show Weather")
-    #print(result)
     if result.status_code == 200:
-        # print("This is Json data:")
-        # print(result)
         return render_template("return_weather.html", data=result.json())
     else:
         error = f"Failed to retrive data. status code: {result.status_code} ."

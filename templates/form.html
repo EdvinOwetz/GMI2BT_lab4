@@ -38,7 +38,7 @@
                         <input type="text" id="adress" name="adress" required>
                     </div>
                     <div>
-                        <label for="postnum">Postnummer och ort:</label>
+                        <label for="postnum">Postnummer</label> och <label for="town">Ort:</label>
                         <div class="required">
                             <input type="text" id="postnum" name="postnum" required>
                             <input type="text" id="town" name="town" required>
@@ -64,9 +64,11 @@
                         <input type="checkbox" name="subscribe" id="subscribe">
                     </div>
                     <div>
-                        <label for="email-type">Erbjudanden via e-post</label>
-                        <input type="radio" name="email-type" value="HTML">
-                        <input type="radio" name="email-type" value="text">
+                        <label>E-postformat:</label>
+                        <input type="radio" name="email-type" id="et-html" value="HTML">
+                        <label for="et-html" >HMTL</label>
+                        <input type="radio" name="email-type" id="et-text" value="text">
+                        <label for="et-text">text</label>
                     </div>
                     <div>
                         <label for="comments">Övriga kommentarer:</label><br>
