@@ -2,8 +2,6 @@ import sqlite3
 from pathlib import Path
 from weather import Weather
 
-from random_weather import generate_weather_data
-
 # Reference
 # https://www.sqlitetutorial.net/sqlite-python/create-tables/
 
